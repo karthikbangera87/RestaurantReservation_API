@@ -1,0 +1,86 @@
+<div>
+    <div id="contact-us">
+        <div class="container">
+            <div class="row">
+                <h2>Reservation ID :{{adminModifyReservationVm.id}} you are editing</h2>
+                <br/>
+                <div class="product-item col-md-12">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <form name="adminreservationeditform" ng-submit = "adminreservationeditform.$valid && adminModifyReservationVm.modifyReservation()"  novalidate>
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name"  ng-model = "adminModifyReservationVm.name" class="form-control" id="name"  placeholder="Full Name" required >
+                                    <div ng-messages="adminreservationeditform.name.$error" ng-if="adminreservationeditform.name.$dirty">
+                                        <p ng-message="required">Name is required field</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact">Contact Number</label>
+                                    <input type="text" name = "contact" class="form-control" ng-model = "adminModifyReservationVm.contact" id="contact" placeholder="Contact Number" required ng-pattern = "/^[0-9]{10}$/">
+                                    <div ng-messages="adminreservationeditform.contact.$error" ng-if="adminreservationeditform.contact.$dirty">
+                                        <p ng-message="required">Contact Number is required</p>
+                                        <p ng-message="pattern">Contact Number should be a 10 digits</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" ng-model = "adminModifyReservationVm.email" id="email" name = "email" placeholder="Email" required>
+                                    <div ng-messages="adminreservationeditform.email.$error" ng-if="adminreservationeditform.email.$dirty">
+                                        <p ng-message="required">Email is required</p>
+                                        <p ng-message="email">Invalid email address</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="guests">No.of guests</label>
+                                    <input type="number" name = "guests" ng-model = "adminModifyReservationVm.guestcount" class="form-control" id="guests" placeholder="# of guests" required min="1">
+                                    <div ng-messages="adminreservationeditform.guests.$error" ng-if="adminreservationeditform.guests.$dirty">
+                                        <p ng-message="required">Guest Count is required</p>
+                                        <p ng-message="min">Should me minimum one person to make a reservation</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tableno">Table Number Assigned</label>
+                                    <input type="number" name = "tableno" ng-model = "adminModifyReservationVm.tableno" class="form-control" id="tableno"  >
+                                    <div ng-messages="adminreservationeditform.tableno.$error" ng-if="adminreservationeditform.tableno.$dirty">
+                                        <p ng-message="required">Table Number is required</p>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Reservation Date</label>
+                                    <input class="form-control" id="date" ng-model = "adminModifyReservationVm.date" name = "date" placeholder="date" type="date" required ">
+                                    <div ng-messages="adminreservationeditform.date.$error" ng-if="adminreservationeditform.date.$dirty">
+                                        <p ng-message="required">Date is required</p>
+
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time">Reservation Time</label>
+                                    <input type="time" class="form-control" id="time" ng-model = "adminModifyReservationVm.time" name = "time" placeholder="Time" required>
+                                    <div ng-messages="adminreservationeditform.time.$error" ng-if="adminreservationeditform.time.$dirty">
+                                        <p ng-message="required">Time is required</p>
+
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="status">Reservation Status</label>
+                                    <input type="text" name="status"  ng-model = "adminModifyReservationVm.status" class="form-control" id="status"  placeholder="status" required >
+                                    <div ng-messages="adminreservationeditform.status.$error" ng-if="adminreservationeditform.status.$dirty">
+                                        <p ng-message="required">Status is required field</p>
+                                    </div>
+                                </div>
+                                <br/>
+                                <button type="submit" class="btn btn-primary">Modify Reservation</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

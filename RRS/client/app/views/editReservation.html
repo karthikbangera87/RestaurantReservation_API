@@ -1,0 +1,71 @@
+<div>
+    <div id="contact-us">
+        <div class="container">
+            <div class="row">
+                <h2>Edit your reservation: Reservation ID :{{editReservationVm.id}}</h2>
+                <br/>
+                <div class="product-item col-md-12">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <form name="reservationeditform" ng-submit = "reservationeditform.$valid && editReservationVm.alterReservation()"  novalidate>
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name"  ng-model = "editReservationVm.name" class="form-control" id="name"  placeholder="Full Name" required >
+                                    <div ng-messages="reservationeditform.name.$error" ng-if="reservationeditform.name.$dirty">
+                                        <p ng-message="required">Name is required field</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact">Contact Number</label>
+                                    <input type="text" name = "contact" class="form-control" ng-model = "editReservationVm.contact" id="contact" placeholder="Contact Number" required ng-pattern = "/^[0-9]{10}$/">
+                                    <div ng-messages="reservationeditform.contact.$error" ng-if="reservationeditform.contact.$dirty">
+                                        <p ng-message="required">Contact Number is required</p>
+                                        <p ng-message="pattern">Contact Number should be a 10 digits</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" ng-model = "editReservationVm.email" id="email" name = "email" placeholder="Email" required>
+                                    <div ng-messages="reservationeditform.email.$error" ng-if="reservationeditform.email.$dirty">
+                                        <p ng-message="required">Email is required</p>
+                                        <p ng-message="email">Invalid email address</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="guests">No.of guests</label>
+                                    <input type="number" name = "guests" ng-model = "editReservationVm.guestcount" class="form-control" id="guests" placeholder="# of guests" required min="1">
+                                    <div ng-messages="reservationeditform.guests.$error" ng-if="reservationeditform.guests.$dirty">
+                                        <p ng-message="required">Guest Count is required</p>
+                                        <p ng-message="min">Should me minimum one person to make a reservation</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Reservation Date</label>
+                                    <input class="form-control" id="date" ng-model = "editReservationVm.date" name = "date" placeholder="date" type="date" required ">
+                                    <div ng-messages="reservationeditform.date.$error" ng-if="reservationeditform.date.$dirty">
+                                        <p ng-message="required">Date is required</p>
+
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time">Reservation Time</label>
+                                    <input type="time" class="form-control" id="time" ng-model = "editReservationVm.time" name = "time" placeholder="Time" required>
+                                    <div ng-messages="reservationeditform.time.$error" ng-if="reservationeditform.time.$dirty">
+                                        <p ng-message="required">Time is required</p>
+
+
+                                    </div>
+                                </div>
+                                <br/>
+                                <button type="submit" class="btn btn-primary">Change Reservation</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+<br/>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/admin/settings">View/Modify Reservations</span></a></li>
+                <li><a href="#/admin/profile">Profile Settings</a></li>
+                <li><a href="#/admin/visitors">Visitors log</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class ="container">
+    <div class="col-md-4 ">
+        <div>
+            <form name="visitLogForm" ng-submit = "visitLogForm.$valid && adminVisitorsVm.checkVisitLogTime()"  novalidate>
+                <div class="form-group">
+                    <label for="date">Reservation Date</label>
+                    <input type="date" class="form-control" id="date" ng-model = "adminVisitorsVm.date" name = "date" required>
+                    <div ng-messages="visitLogForm.date.$error" ng-if="visitLogForm.date.$dirty">
+                        <p ng-message="required">Date is required</p>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="frtime">From Reservation Time</label>
+                    <input type="time" class="form-control" id="frtime" ng-model = "adminVisitorsVm.frtime" name = "frtime"  required>
+                    <div ng-messages="visitLogForm.frtime.$error" ng-if="visitLogForm.frtime.$dirty">
+                        <p ng-message="required">Time is required</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="totime">To Reservation Time</label>
+                    <input type="time" class="form-control" id="totime" ng-model = "adminVisitorsVm.totime" name = "totime"  required>
+                    <div ng-messages="visitLogForm.totime.$error" ng-if="visitLogForm.totime.$dirty">
+                        <p ng-message="required">Time is required</p>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" >Submit</button>
+            </form>
+        </div>
+        <h1>OR</h1>
+        <div>
+            <form name="visitEmailLogForm" ng-submit = "visitEmailLogForm.$valid && adminVisitorsVm.checkVisitLogEmail()"  novalidate>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" ng-model = "adminVisitorsVm.email" id="email" name = "email" placeholder="Email" required>
+                    <div ng-messages="visitEmailLogForm.email.$error" ng-if="visitEmailLogForm.email.$dirty">
+                        <p ng-message="required">Email is required</p>
+                        <p ng-message="email">Invalid email address</p>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" >Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-offset-1 col-md-7">
+
+        <br/>
+        <div class="panel-group" id="accordion">
+            <h2>List of reservations for the based on the search :</h2><br/>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Reservation ID: UAV32456-958-959</a>
+
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <p><h5>Reservation Date:11-17-2015</h5>
+                        <h5>Reservation from: 10AM - 12 PM </h5>
+                        <h5>Duration of Reservation : 2 hours</h5>
+                        <h5>No.of persons:4</h5>
+                        <h5>Name:Testing123</h5>
+                        <h5>Contact Number:999-999-9999</h5></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Reservation ID: UGV32456-958-859</a>
+
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><h5>Reservation Date:11-17-2015</h5>
+                        <h5>Reservation from: 1PM - 3 PM </h5>
+                        <h5>Duration of Reservation : 2 hours</h5>
+                        <h5>No.of persons:3</h5>
+                        <h5>Name:Testing345</h5>
+                        <h5>Contact Number:999-999-9999</h5></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Reservation ID: TAV32456-358-959</a>
+
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><h5>Reservation Date:11-17-2015</h5>
+                        <h5>Reservation from: 10AM - 12 PM </h5>
+                        <h5>Duration of Reservation : 2 hours</h5>
+                        <h5>No.of persons:3</h5>
+                        <h5>Name:Testing567</h5>
+                        <h5>Contact Number:999-999-9999</h5></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
