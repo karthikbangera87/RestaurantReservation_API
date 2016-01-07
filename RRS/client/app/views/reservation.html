@@ -1,0 +1,107 @@
+<div>
+    <div id="heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading-content">
+                        <h2>Reservation</h2>
+                        <span>Home / <a href="contact-us.html">Reservation</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="product-post">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading-section">
+                        <h2>We'll reserve  a table just for you ! Call us at 999-999-9999 or use the form to
+                        make a reservation </h2>
+                        <img src="images/under-heading.png" alt="" >
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9 ">
+                    <h3>To make change view or to cancel to an existing reservation :
+                        <span><a href = "#/changeReservation" class="btn btn-primary btn-lg">CLICK HERE</a></span>
+                    </h3>
+                 </div>
+            </div>
+            <br/>
+            <br/>
+            <div id="contact-us">
+                <div class="container">
+                    <div class="row">
+                        <div class="product-item col-md-12">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <form name="reservationform" ng-submit = "reservationform.$valid && reservationVm.addReservation()"  novalidate>
+                                            <div class="form-group">
+                                                <label for="name">Name</label>
+                                                <input type="text" name="name"  ng-model = "reservationVm.name" class="form-control" id="name"  placeholder="Full Name" required >
+                                                <div ng-messages="reservationform.name.$error" ng-if="reservationform.name.$dirty">
+                                                    <p ng-message="required">Name is required field</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="contact">Contact Number</label>
+                                                <input type="text" name = "contact" class="form-control" ng-model = "reservationVm.contact" id="contact" placeholder="Contact Number" required ng-pattern = "/^[0-9]{10}$/">
+                                                <div ng-messages="reservationform.contact.$error" ng-if="reservationform.contact.$dirty">
+                                                    <p ng-message="required">Contact Number is required</p>
+                                                    <p ng-message="pattern">Contact Number should be a 10 digits</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email address</label>
+                                                <input type="email" class="form-control" ng-model = "reservationVm.email" id="email" name = "email" placeholder="Email" required>
+                                                <div ng-messages="reservationform.email.$error" ng-if="reservationform.email.$dirty">
+                                                    <p ng-message="required">Email is required</p>
+                                                    <p ng-message="email">Invalid email address</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="guests">No.of guests</label>
+                                                <input type="number" name = "guests" ng-model = "reservationVm.guestcount" class="form-control" id="guests" placeholder="# of guests" required min="1">
+                                                <div ng-messages="reservationform.guests.$error" ng-if="reservationform.guests.$dirty">
+                                                    <p ng-message="required">Guest Count is required</p>
+                                                    <p ng-message="min">Should me minimum one person to make a reservation</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="date">Reservation Date</label>
+                                                <input class="form-control" id="date" ng-model = "reservationVm.date" name = "date" placeholder="date" type="date" required ">
+                                                <div ng-messages="reservationform.date.$error" ng-if="reservationform.date.$dirty">
+                                                    <p ng-message="required">Date is required</p>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="time">Reservation Time</label>
+                                                <input type="time" class="form-control" id="time" ng-model = "reservationVm.time" name = "time" placeholder="Time" required>
+                                                <div ng-messages="reservationform.time.$error" ng-if="reservationform.time.$dirty">
+                                                    <p ng-message="required">Time is required</p>
+
+
+                                                </div>
+                                            </div>
+                                        <br/>
+                                        <button type="submit" class="btn btn-primary" >Submit</button>
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,95 @@
+<br/>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/admin/settings">View/Modify Reservations</span></a></li>
+                <li><a href="#/admin/profile">Profile Settings</a></li>
+                <li><a href="#/admin/visitors">Visitors log</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class ="container">
+
+    <div class="col-md-6 ">
+
+        <h3>Current restaurant profile </h3>
+        <br/>
+        <div class="more-info">
+            <ul>
+                <li><i class="fa fa-phone"></i>{{adminProfile.result.phone}}</li>
+                <li><i class="fa fa-globe"></i>{{adminProfile.result.address}}</li>
+                <li><i class="fa fa-envelope"></i>{{adminProfile.result.email}}</li>
+            </ul>
+            <br/>
+            <h3>Reservation Table auto assign status</h3>
+            <div class="checkbox">
+                <input type="checkbox" ng-if="adminProfile.result.autoassign" > Auto-assign tables to customers
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="col-md-6 ">
+        <form name="profileForm" ng-submit = "profileForm.$valid && adminProfileVm.changeProfile()"  novalidate>
+
+            <h3>Change restaurant details </h3>
+            <br/>
+            <div class="form-group">
+                <label for="email">Change Email address</label>
+                <input type="email" class="form-control" ng-model = "adminProfileVm.email" id="email" name = "email" placeholder="Email" required>
+                <div ng-messages="profileForm.email.$error" ng-if="profileForm.email.$dirty">
+                    <p ng-message="required">Email is required</p>
+                    <p ng-message="email">Invalid email address</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contact">Change Contact Number</label>
+                <input type="text" name = "contact" class="form-control" ng-model = "adminProfileVm.contact" id="contact" placeholder="Contact Number" required ng-pattern = "/^[0-9]{10}$/">
+                <div ng-messages="profileForm.contact.$error" ng-if="profileForm.contact.$dirty">
+                    <p ng-message="required">Contact Number is required</p>
+                    <p ng-message="pattern">Contact Number should be a 10 digits</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Change Address</label>
+                <input type="text" name = "address" class="form-control" ng-model = "adminProfileVm.address" id="address" placeholder="Address" required>
+                <div ng-messages="profileForm.address.$error" ng-if="profileForm.address.$dirty">
+                    <p ng-message="required">Address is required</p>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date" ng-model = "adminProfileVm.date" name = "date" required>
+                <div ng-messages="profileForm.date.$error" ng-if="profileForm.date.$dirty">
+                    <p ng-message="required">Date is required</p>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="frtime">Open Time</label>
+                <input type="time" class="form-control" id="frtime" ng-model = "adminProfileVm.frtime" name = "frtime"  required>
+                <div ng-messages="profileForm.frtime.$error" ng-if="profileForm.frtime.$dirty">
+                    <p ng-message="required">Time is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="totime">Close Time</label>
+                <input type="time" class="form-control" id="totime" ng-model = "adminProfileVm.totime" name = "totime"  required>
+                <div ng-messages="profileForm.totime.$error" ng-if="profileForm.totime.$dirty">
+                    <p ng-message="required">Time is required</p>
+                </div>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" ng-model = "adminProfileVm.autoassign"> Check to to auto-assign tables to customers
+            </div>
+            <button type="submit" class="btn btn-primary" >Submit</button>
+        </form>
+    </div>
+
+</div>

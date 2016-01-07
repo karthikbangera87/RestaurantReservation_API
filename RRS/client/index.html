@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--
+Used the Grill Template from
+http://www.templatemo.com/free-website-templates/417-grill
+-->
+    <head>
+        <meta charset="utf-8">
+        <title>Indian Spice</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/templatemo_style.css">
+        <link rel="stylesheet" href="css/templatemo_misc.css">
+        <link rel="stylesheet" href="css/flexslider.css">
+        <link rel="stylesheet" href="css/testimonails-slider.css">
+
+        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+    </head>
+    <body ng-app = "hotelapp">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+            <header>
+                <div id="top-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="home-account">
+                                    <a href="#/admin">Login administartor</a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="main-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="logo">
+                                    <a href="#/"><img src="images/logo.png" title="Indian Spice" alt="India Spice" ></a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="main-menu">
+                                    <ul>
+                                        <li><a href="#/">Home</a></li>
+                                        <li><a href="#/about">About</a></li>
+                                        <li><a href="#/contact">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="reserve-button">
+                                    <a href ="#/reservation" type="button" class="btn btn-success">FOR RESERVATIONS</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <div class = "container">
+            <div ng-view></div>
+        </div>
+
+
+        <footer>
+            <div class="container">
+                <div class="top-footer">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="subscribe-form">
+                                <span>Get in touch with us</span>
+                                <form method="get" class="subscribeForm">
+                                    <input id="subscribe" type="text" />
+                                    <input type="submit" id="submitButton" />
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="social-bottom">
+                                <span>Follow us:</span>
+                                <ul>
+                                    <li><a href="#" class="fa fa-facebook"></a></li>
+                                    <li><a href="#" class="fa fa-twitter"></a></li>
+                                    <li><a href="#" class="fa fa-rss"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="main-footer">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="recent-posts">
+                                <h4 class="footer-title">Recent posts</h4>
+                                <div class="recent-post">
+                                    <div class="recent-post-thumb">
+                                        <img src="images/recent-post1.jpg" alt="">
+                                    </div>
+                                    <div class="recent-post-info">
+                                        <h6><a href="#">Delicious and Healthy Menus</a></h6>
+                                        <span>24/12/2084</span>
+                                    </div>
+                                </div>
+                                <div class="recent-post">
+                                    <div class="recent-post-thumb">
+                                        <img src="images/recent-post2.jpg" alt="">
+                                    </div>
+                                    <div class="recent-post-info">
+                                        <h6><a href="#">Simple and effective meals</a></h6>
+                                        <span>18/12/2084</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="more-info">
+                                <h4 class="footer-title">More info</h4>
+                                <p>Please contact us for more information</p>
+                                <ul>
+                                    <li><i class="fa fa-phone"></i>010-020-0340</li>
+                                    <li><i class="fa fa-globe"></i>123 Dagon Studio, Yakin Street, Chicago</li>
+                                    <li><i class="fa fa-envelope"></i><a href="#">info@indiaspice.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="bottom-footer">
+                    <p>Copyright © 2015 <a href="#">Indian Spice</a></p>
+                </div>
+
+            </div>
+        </footer>
+
+    
+        <script src = "js/vendor/jquery-1.11.0.min.js"></script>
+        <script src = "js/plugins.js"></script>
+        <script src = "js/main.js"></script>
+        <script src = "https://code.angularjs.org/1.4.8/angular.min.js"></script>
+        <script src = "https://code.angularjs.org/1.4.8/angular-route.min.js"></script>
+        <script src = "https://code.angularjs.org/1.4.8/angular-messages.min.js"></script>
+        <script src = "app/app.js"></script>
+        <script src = "app/controllers/MakeReservationController.js"></script>
+        <script src = "app/controllers/AboutController.js"></script>
+        <script src = "app/controllers/ContactController.js"></script>
+        <script src = "app/controllers/HomeController.js"></script>
+        <script src = "app/controllers/ConfirmationController.js"></script>
+        <script src = "app/services/confirmationGenerator.js"></script>
+        <script src = "app/controllers/ChangeReservationController.js"></script>
+        <script src = "app/services/reservationService.js"></script>
+        <script src = "app/controllers/ErrorController.js"></script>
+        <script src = "app/controllers/EditReservationController.js"></script>
+        <script src = "app/services/reservationEditService.js"></script>
+        <script src = "app/controllers/EditConfirmationController.js"></script>
+        <script src = "app/services/loginService.js"></script>
+        <script src = "app/controllers/AdminController.js"></script>
+        <script src = "app/controllers/AdminSettingsController.js"></script>
+        <script src = "app/controllers/AdminProfileController.js"></script>
+        <script src = "app/controllers/AdminVisitorsController.js"></script>
+        <script src = "app/services/adminVisitorService.js"></script>
+        <script src = "app/services/profileService.js"></script>
+        <script src = "app/services/adminSettingsService.js"></script>
+        <script src = "app/controllers/AdminModifyReservationController.js"></script>
+
+
+    </body>
+</html>

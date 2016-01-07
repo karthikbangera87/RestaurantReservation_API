@@ -1,0 +1,53 @@
+<div class = "container">
+    <div class="col-md-8">
+        <div class="form-group">
+            <form ng-submit = "changeReservationVm.checkReservation()"name = "reservationidform" novalidate>
+                <label for="reservationid">Please Enter your reservation ID </label>
+                <input type="text" name = "reservationid" class="form-control" ng-model = "changeReservationVm.id" id="reservationid" placeholder="Reservation ID" required ">
+                <div ng-messages="reservationidform.reservationid.$error" ng-if="reservationidform.reservationid.$dirty">
+                    <p ng-message="required">Reservation ID is required</p>
+                </div>
+                <br/>
+                <button type="submit" class="btn btn-primary" >Submit</button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <div class="table-responsive" ng-if = "changeReservationVm.result">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Reservation ID</th>
+                    <th>Name</th>
+                    <th>Contact Number</th>
+                    <th>Email Address</th>
+                    <th>No.of Guests</th>
+                    <th>Reservation Date</th>
+                    <th>Reservation Time</th>
+                    <th>Reservation Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <!-- Fields should match the how the model is setup in the backend -->
+                    <td>{{changeReservationVm.result.reservation_id}}</td>
+                    <td>{{changeReservationVm.result.customer_name}}</td>
+                    <td>{{changeReservationVm.result.email}}</td>
+                    <td>{{changeReservationVm.result.phone}}</td>
+                    <td>{{changeReservationVm.result.party_size}}</td>
+                    <td>{{changeReservationVm.result.reservation_date}}</td>
+                    <td>{{changeReservationVm.result.reservation_time}}</td>
+                    <td>{{changeReservationVm.result.reservation_status}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <br/>
+            <br/>
+            <button onclick="location.href= '#/editReservation' "  type = "submit" class="btn btn-warning">Edit Reservation</button>
+            <button ng-click="changeReservationVm.cancelReservation()" type="submit" class="btn btn-danger">Cancel Reservation</button>
+        </div>
+        <div ng-if = "changeReservationVm.error">
+            <h1>{{changeReservationVm.error}}</h1>
+        </div>
+    </div>
+</div>
